@@ -48,9 +48,40 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="430dp"
         android:id="@+id/listTransaction"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/table" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/listTransaction"
+        >
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="Start Date"
+            android:ems="10"
+            android:id="@+id/editText4"
+            />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="End Date"
+            android:ems="10"
+            android:id="@+id/editText5" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GO"
+            android:id="@+id/button2" />
+    </LinearLayout>
 
 </RelativeLayout>

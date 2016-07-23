@@ -1,5 +1,6 @@
 package activity.login.loginactivityusinghttpurlconnectio;
 
+import android.accounts.Account;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +29,10 @@ public class GetTransactionByDate extends AppCompatActivity {
     String Accountid=null;
     String Accounttype=null;
     String ExtendedType=null;
-    EditText startDate,endDate;
+    EditText editText1,editText2;
     ListView listViewTransaction;
     Button submit;
+    TextView textView;
     List<GetTransactionModel> getTransactionModelsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +40,21 @@ public class GetTransactionByDate extends AppCompatActivity {
         setContentView(R.layout.activity_get_transaction_by_date);
         Intent intent=getIntent();
         Sessionid=intent.getStringExtra("SessionId");
+        editText1= (EditText) findViewById(R.id.editText4);
+        editText2= (EditText) findViewById(R.id.editText5);
         Accountid=intent.getStringExtra(AfterLogin.KEY_ACCOUNT_ID);
         Accounttype=intent.getStringExtra(AfterLogin.KEY_ACCOUNT_TYPE);
         ExtendedType=intent.getStringExtra(AfterLogin.KEY_EXTENDED_ACCOUNT_TYPE);
         listViewTransaction= (ListView)findViewById(R.id.listTransaction);
-        startDate= (EditText) findViewById(R.id.editText);
-        endDate= (EditText) findViewById(R.id.editText3);
-        submit= (Button) findViewById(R.id.button);
+        submit= (Button) findViewById(R.id.button2);
         submit.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 new GetTransaction().execute();
             }
         });
+
+
     }
     public class GetTransaction extends AsyncTask<String,String,List<GetTransactionModel>>
     {
@@ -60,16 +67,15 @@ public class GetTransactionByDate extends AppCompatActivity {
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
-            pDialog.setCanceledOnTouchOutside(false);
         }
         @Override
         protected List<GetTransactionModel> doInBackground(String... strings) {
-            String sDate,eDate;
-            sDate=startDate.getText().toString();
-            eDate=endDate.getText().toString();
             UserFunctions userFunction = new UserFunctions();
             JSONObject json = null;
             try {
+                String sDate,eDate;
+                sDate=editText1.getText().toString();
+                eDate=editText2.getText().toString();
                 json = userFunction.getTransactionByDate(Sessionid,Accountid,Accounttype,ExtendedType,sDate,eDate);
                 JSONObject parentObject=new JSONObject(json.toString());
                 JSONArray parentArray=parentObject.getJSONArray("Transactions");

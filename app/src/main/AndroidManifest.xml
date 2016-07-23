@@ -19,7 +19,8 @@
         <activity android:name=".AfterLogin"
             android:label="Get Account"></activity>
         <activity android:name=".GetTransactionByDate"
-            android:label="Transaction"></activity>
+            android:label="Transaction"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>
