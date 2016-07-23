@@ -76,7 +76,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="Start Date"
+            android:hint="dd"
             android:ems="10"
             android:id="@+id/editText4"
             />
