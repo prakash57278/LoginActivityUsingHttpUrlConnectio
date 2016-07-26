@@ -69,14 +69,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/listTransaction"
-
+        android:background="#F4F6F6"
         >
 
         <EditText
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="dd"
+            android:hint="mm/dd/yyyy"
+            android:textColorHint="#bfbfbf"
             android:ems="10"
             android:id="@+id/editText4"
             />
@@ -85,7 +86,8 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="End Date"
+            android:hint="mm/dd/yyyy"
+            android:textColorHint="#bfbfbf"
             android:ems="10"
             android:id="@+id/editText5" />
 

@@ -3,30 +3,14 @@ package activity.login.loginactivityusinghttpurlconnectio;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import static activity.login.loginactivityusinghttpurlconnectio.AppConfig.URL_LOGIN;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import activity.login.loginactivityusinghttpurlconnectio.R;
-import activity.login.loginactivityusinghttpurlconnectio.SessionMangement;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etUserName, etPassword;
@@ -70,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             UserFunctions userFunction = new UserFunctions();
             JSONObject json = null;
             try {
-                json = userFunction.loginUser("neeraj333","Test1234_");
+                json = userFunction.loginUser(username,password);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

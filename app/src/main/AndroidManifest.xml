@@ -6,21 +6,33 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/avatar"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".Splash"
+            android:label="Aqumulate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AfterLogin"
-            android:label="Get Account"></activity>
-        <activity android:name=".GetTransactionByDate"
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="activity.login.loginactivityusinghttpurlconnectio.LoginActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AfterLogin"
+            android:label="Get Account" />
+        <activity
+            android:name=".GetTransactionByDate"
             android:label="Transaction"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
