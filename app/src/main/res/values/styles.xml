@@ -5,8 +5,8 @@
         <!-- Customize your theme here. -->
 
         <item name="colorPrimary">#5885BA</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#4D7CB2</item>
+        <item name="colorAccent">#5885BA</item>
         <item name="android:textColorHint">#ffffff</item>
     </style>
 
