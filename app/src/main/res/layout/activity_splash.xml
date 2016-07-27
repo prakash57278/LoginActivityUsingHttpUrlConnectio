@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
+    android:background="@drawable/aqumulate_picsart"
     >
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:id="@+id/imageView"
-        android:background="@drawable/transparentbig"
-        />
 </LinearLayout>
